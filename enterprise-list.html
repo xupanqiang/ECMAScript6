@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="content-type">
+    <title>企业列表</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!--头部开始-->
+    <div class="yyz-header">
+        <div class="yyz-header-left fl">优易智慧产业地图</div>
+        <div class="yyz-header-right fl">
+            <ul>
+                <li class="current"><a href="index.html"><img src="img/header1-1.png"/>企业分布</a><i></i></li>
+                <li><a href="reli.html"><img src="img/header2.png"/>热力分析</a><i></i></li>
+                <li><a href="xinxi.html"><img src="img/header3.png"/>信息变更告警<em></em></a><i></i></li>
+            </ul>
+        </div>
+    </div>
+    <!--头部结束-->
+    <!--内容开始-->
+    <div class="yyz-main">
+        <div class="yyz-main-left">
+            <div class="yyz-main-in" style="margin-top:40px">
+                <!--搜索-->
+                <input type="text" class="srt" value="请输入企业名称或楼宇名称"/>
+                <div class="ss">
+                    <img src="img/ss.png" alt="">
+                </div>
+            </div>
+            <!--tab-->
+            <div class="yyz-main-in">
+                <select class="srt2">
+                    <option value="产业">产业</option>
+                </select>
+                <select class="srt2 sr">
+                    <option value="产业">行业</option>
+                </select>
+                <select class="srt2 sr">
+                    <option value="产业">门类</option>
+                    <option value="产业">请先选择行业</option>
+                </select>
+                <select class="srt2">
+                    <option value="产业">区域</option>
+                </select>
+                <select class="srt2 sr">
+                    <option value="产业">板块</option>
+                </select>
+            </div>
+            <div class="yyz-main-tab">
+                <p class="sx">为您找到1526家企业，588座楼宇<span class="current" style="margin-left:20px">税金↓</span><span>营收↓</span><span>从业人数↓</span></p>
+            </div>
+            <!--详情返回-->
+            <div class="yyz-main-tab">
+                <div class="tab">
+                    <a href="index.html" class="fanhui">返回企业列表</a>
+                </div>
+            </div>
+            <!--详情-->
+            <div class="yyz-main-tab">
+                <div class="tab xiangqing">
+                    <p class="biaoti">北京雷特新技术实业公司</p>
+                    <p>主营业务：芳纶无纬布及其制品；机电产品</p>
+                    <p>地址：北京市丰台区云岗田城中里1号院</p>
+                    <p>行业：纺织业</p>
+                    <p>营业收入：2000万元</p>
+                    <p>主要税金及附加：560万元</p>
+                    <p>从业人员：150人</p>
+                </div>
+            </div>
+
+ 
+        </div>
+        <div class="yyz-main-right">
+            <div class="zsdt">
+            <img src="img/ditu1.jpg" alt="" style="width:100%;height:100%">
+            </div>
+        </div>
+    </div>
+    <!--内容结束-->
+</body>
+<script type="text/javascript" src="js/jquery.pagination.js"></script>
+<script type="text/javascript">
+//---------------首页分页1----------------------
+//总数目
+
+var length = $("#hiddenresult li").length;
+//从表单获取分页元素参数
+var optInit = {callback: pageselectCallback};
+$("#Pagination").pagination(length, optInit);
+//-------------------------------
+function pageselectCallback(page_index, jq){
+    // 从表单获取每页的显示的列表项数目
+    var items_per_page = 3;
+    var max_elem = Math.min((page_index+1) * items_per_page, length);
+    $("#yyz-main-tt").html("");
+    // 获取加载元素
+        for(var i=page_index*items_per_page;i<max_elem;i++){
+            $("#yyz-main-tt").append($("#hiddenresult li:eq("+i+")").clone());
+        }
+    //阻止单击事件
+    return false;
+}
+</script>
+</html>

@@ -111,7 +111,7 @@ a {
 }
 .yyz-header-left{width:480px;color:#4899da;font-size:30px;font-weight: 900;text-align: center}
 .yyz-header-right{font-size:20px;color:#c4ccda;}
-.yyz-header-right a {display: block;padding:0 48px;}
+.yyz-header-right a {display: block;padding:0 48px;line-height:60px}
 .yyz-header-right ul{position: relative;}
 .yyz-header-right ul li{float:left;}
 .yyz-header-right ul li img{margin-right:10px;vertical-align:middle;margin-top:-5px;}
@@ -134,15 +134,15 @@ a {
 .sx{line-height:58px;border-top:1px solid #a1a4ac;border-bottom:1px solid #a1a4ac;margin-top:30px;color:#c4ccda;}
 .sx span{margin-right:10px;cursor: pointer;}
 .sx .current{color:#76b5e8;}
-.yyz-main-tab{width: calc(100% - 40px);width:-webkit-calc(100% - 40px);width:-moz-calc(100% - 40px);width:-ms-calc(100% - 40px);width:-o-calc(100% - 40px);margin:0 auto;position: relative;}
+.yyz-main-tab{padding:0 20px;margin:0 auto;position: relative;}
 .tab{display:table;line-height:58px;border-bottom:1px solid #a1a4ac;position: relative;height:58px;width:100%;}
-.tab li{ display: table-cell; text-align: center;cursor: pointer;color:#c4ccda;}
+.tab li{ display: table-cell; text-align: center;cursor: pointer;color:#c4ccda;font-size:16px}
 .tab li:hover,.tab .current{color:#76b5e8;}
 
 /*分页内容*/
 .yyz-main-tb{position: relative;}
 .yyz-main-tt{width:100%;position: relative;color:#c4ccda;}
-.yyz-main-tt a{border-bottom: 1px solid #a1a4ac;padding:20px 0;line-height:20px;display: block;}
+.yyz-main-tt a{border-bottom: 1px solid #a1a4ac;padding:20px 0;line-height:20px;display: block;width:400px}
 .yyz-main-tt li{width:100%;}
 .yyz-main-tt li:hover{background: #333947;}
 .yyz-main-tt span{display: table-cell;}

@@ -3,16 +3,13 @@
 
 <head>
     <meta content="text/html;charset=utf-8" http-equiv="content-type">
-    <title>企业分布</title>
+    <title>楼宇列表</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
 </head>
 
 <body>
-    <!-- <div style="position:fixed;top:0;width:100%;height:100%;background:rgba(255,255,255,0.85);z-index: 999999;">
-        <img src="img/load.gif" alt="" style="position: absolute;margin-top:-33px;margin-left:-33px;top:50%;left:50%">
-    </div> -->
     <!--头部开始-->
     <div class="yyz-header">
         <div class="yyz-header-left fl">优易智慧产业地图</div>
@@ -57,11 +54,29 @@
             <div class="yyz-main-tab">
                 <p class="sx">为您找到1526家企业，588座楼宇<span class="current" style="margin-left:20px">税金↓</span><span>营收↓</span><span>从业人数↓</span></p>
             </div>
+            <!--详情返回-->
+            <div class="yyz-main-tab">
+                <div class="tab">
+                    <a href="index.html" class="fanhui">返回楼宇列表</a>
+                </div>
+            </div>
+            <!--详情-->
+            <div class="yyz-main-tab">
+                <div class="tab xiangqing">
+                    <p class="biaoti">旅游大厦</p>
+                    <p>包含30家企业</p>
+                    <p>北京市丰台区长青路82号</p>
+                    <p>营业收入：7550万元</p>
+                    <p>主要税金及附加：2300万元</p>
+                    <p>从业人员：800人</p>
+                </div>
+            </div>
             <!--tab-->
             <div class="yyz-main-tab">
-                <ul class="tab tab-tab">
-                    <li class="current">查看企业列表<i></i></li>
-                    <li>查看楼宇列表<i></i></li>
+                <ul class="tab">
+                    <li class="current">按税金排序<i></i></li>
+                    <li>按营收排序<i></i></li>
+                    <li>按人数排序<i></i></li>
                 </ul>
             </div>
 
@@ -75,7 +90,7 @@
                 <!-- 存储内容  不会显示  ajax内容添加这里 -->
                 <ul id="hiddenresult" style="display:none;">
                     <li>
-                        <a href="enterprise-list.html" class="yyz-main-tab"><span class="xunhuan">1、</span><span><p>北京雷特新技术实业公司</p><p>主营业务：芳纶无纬布及其制品；机电产品</p><p>地址：北京市丰台区云岗田城中里1号院</p></span></a>
+                        <a href="#" class="yyz-main-tab"><span class="xunhuan">1、</span><span><p>北京雷特新技术实业公司</p><p>主营业务：芳纶无纬布及其制品；机电产品</p><p>地址：北京市丰台区云岗田城中里1号院</p></span></a>
                     </li>
                     <li>
                         <a href="#" class="yyz-main-tab"><span class="xunhuan">2、</span><span><p>北京航天三发高科技有限公司</p><p>主营业务：先进制造技术</p><p>地址：北京市丰台区云岗北区8号楼</p></span></a>
@@ -103,39 +118,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="yyz-main-tb" style="display: none">
-                <!-- 显示ajax内容2 -->
-                <ul class="yyz-main-tt" id="yyz-main-tt2">
-                    
-                </ul>
-                <div id="Pagination2" class="pagination"></div>
-                <!-- 存储内容  不会显示  ajax内容添加这里 -->
-                <ul id="hiddenresult2" cllass="hiddenresult" style="display:none;">
-                    <li>
-                        <a href="louyu-list.html" class="yyz-main-tab"><span class="xunhuan">1、</span><span><p>总部基地ABP大厦A座</p><p>楼宇内企业：26家</p><p>地址：北京市丰台区总部基地1区12号楼1号</p><p>营业收入：8600万元</p><p>主要税金及附加：2654万元</p><p>从业人员：1200人</p></span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="yyz-main-tab"><span class="xunhuan">2、</span><span><p>总部基地ABP大厦A座</p><p>楼宇内企业：26家</p><p>地址：北京市丰台区总部基地1区12号楼1号</p><p>营业收入：8600万元</p><p>主要税金及附加：2654万元</p><p>从业人员：1200人</p></span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="yyz-main-tab"><span class="xunhuan">3、</span><span><p>总部基地ABP大厦A座</p><p>楼宇内企业：26家</p><p>地址：北京市丰台区总部基地1区12号楼1号</p><p>营业收入：8600万元</p><p>主要税金及附加：2654万元</p><p>从业人员：1200人</p></span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="yyz-main-tab"><span class="xunhuan">4、</span><span><p>总部基地ABP大厦A座</p><p>楼宇内企业：26家</p><p>地址：北京市丰台区总部基地1区12号楼1号</p><p>营业收入：8600万元</p><p>主要税金及附加：2654万元</p><p>从业人员：1200人</p></span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="yyz-main-tab"><span class="xunhuan">5、</span><span><p>总部基地ABP大厦A座</p><p>楼宇内企业：26家</p><p>地址：北京市丰台区总部基地1区12号楼1号</p><p>营业收入：8600万元</p><p>主要税金及附加：2654万元</p><p>从业人员：1200人</p></span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="yyz-main-tab"><span class="xunhuan">6、</span><span><p>总部基地ABP大厦A座</p><p>楼宇内企业：26家</p><p>地址：北京市丰台区总部基地1区12号楼1号</p><p>营业收入：8600万元</p><p>主要税金及附加：2654万元</p><p>从业人员：1200人</p></span></a>
-                    </li>
-                </ul>
-            </div>
         </div>
         </div>
         <div class="yyz-main-right">
             <div class="zsdt">
-                <img src="img/ditu1.jpg" alt="" style="width:100%;height:100%">
+            <img src="img/ditu1.jpg" alt="" style="width:100%;height:100%">
             </div>
         </div>
     </div>
@@ -143,41 +130,22 @@
 </body>
 <script type="text/javascript" src="js/jquery.pagination.js"></script>
 <script type="text/javascript">
-
 //---------------首页分页1----------------------
 //总数目
+
 var length = $("#hiddenresult li").length;
 //从表单获取分页元素参数
 var optInit = {callback: pageselectCallback};
-$("#Pagination").pagination(length,6, optInit);
+$("#Pagination").pagination(length,3, optInit);
 //-------------------------------
 function pageselectCallback(page_index, jq){
     // 从表单获取每页的显示的列表项数目
-    var items_per_page = 6;
+    var items_per_page = 3;
     var max_elem = Math.min((page_index+1) * items_per_page, length);
     $("#yyz-main-tt").html("");
     // 获取加载元素
         for(var i=page_index*items_per_page;i<max_elem;i++){
             $("#yyz-main-tt").append($("#hiddenresult li:eq("+i+")").clone());
-        }
-    //阻止单击事件
-    return false;
-}
-//---------------首页分页2----------------------
-//总数目
-var length2 = $("#hiddenresult2 li").length;
-//从表单获取分页元素参数
-var optInit2 = {callback: pageselectCallback2};
-$("#Pagination2").pagination(length2,3, optInit2);
-//-------------------------------
-function pageselectCallback2(page_index, jq){
-    // 从表单获取每页的显示的列表项数目
-    var items_per_page = 3;
-    var max_elem = Math.min((page_index+1) * items_per_page, length2);
-    $("#yyz-main-tt2").html("");
-    // 获取加载元素
-        for(var i=page_index*items_per_page;i<max_elem;i++){
-            $("#yyz-main-tt2").append($("#hiddenresult2 li:eq("+i+")").clone());
         }
     //阻止单击事件
     return false;
