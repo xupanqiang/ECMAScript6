@@ -7,6 +7,76 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery.pagination.js"></script>
+<script type="text/javascript">
+
+//---------------首页分页1----------------------
+//总数目
+var length = $("#hiddenresult li").length;
+//从表单获取分页元素参数
+var optInit = {callback: pageselectCallback};
+$("#Pagination").pagination(length,6, optInit);
+//-------------------------------
+function pageselectCallback(page_index, jq){
+    // 从表单获取每页的显示的列表项数目
+    var items_per_page = 6;
+    var max_elem = Math.min((page_index+1) * items_per_page, length);
+    $("#yyz-main-tt").html("");
+    // 获取加载元素
+        for(var i=page_index*items_per_page;i<max_elem;i++){
+            $("#yyz-main-tt").append($("#hiddenresult li:eq("+i+")").clone());
+        }
+    //阻止单击事件
+    return false;
+}
+
+var wi = ($("body,html").width()-500)+"px";
+$(".yyz-main-right").css("width",wi);
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script> 
+
+<script  type="text/javascript"> 
+
+
+	
+//地图
+var map = new BMap.Map("l-map"); //("l-map", {mapType:BMAP_SATELLITE_MAP}); 默认卫星地图
+
+var point = new BMap.Point(116.331398,39.897445);
+
+var marker = new BMap.Marker(new BMap.Point(116.125741, 40.118330));        // 创建标注     40.1185230000,116.1246590000 
+map.addOverlay(marker);
+
+//添加一个弹框
+map.centerAndZoom(new BMap.Point(116.125741, 40.118330), 15);
+	var opts = {
+	  width : 200,     // 信息窗口宽度
+	  height: 100,     // 信息窗口高度
+	  title : "北京五洲康泰科技有限公司" , // 信息窗口标题
+	  enableMessage:true,//设置允许信息窗发送短息
+	  message:"等待"
+	}
+var infoWindow = new BMap.InfoWindow("地址：北京市海淀区苏家坨镇梁家园35号", opts);  // 创建信息窗口对象 
+marker.addEventListener("click", function(){          
+map.openInfoWindow(infoWindow,new BMap.Point(116.125741, 40.118330)); //开启信息窗口
+});
+
+
+//滚动条缩放
+setTimeout(function(){
+		map.setZoom(14);   
+	}, 2000);  //2秒后放大到14级
+map.enableScrollWheelZoom(true);
+
+
+
+
+
+
+
+//添加卫星地图
+map.addControl(new BMap.MapTypeControl()); 
+</script>
 </head>
 
 <body>
@@ -138,74 +208,5 @@
     </section>
     <!--内容结束-->
 </body>
-<script type="text/javascript" src="js/jquery.pagination.js"></script>
-<script type="text/javascript">
 
-//---------------首页分页1----------------------
-//总数目
-var length = $("#hiddenresult li").length;
-//从表单获取分页元素参数
-var optInit = {callback: pageselectCallback};
-$("#Pagination").pagination(length,6, optInit);
-//-------------------------------
-function pageselectCallback(page_index, jq){
-    // 从表单获取每页的显示的列表项数目
-    var items_per_page = 6;
-    var max_elem = Math.min((page_index+1) * items_per_page, length);
-    $("#yyz-main-tt").html("");
-    // 获取加载元素
-        for(var i=page_index*items_per_page;i<max_elem;i++){
-            $("#yyz-main-tt").append($("#hiddenresult li:eq("+i+")").clone());
-        }
-    //阻止单击事件
-    return false;
-}
-
-var wi = ($("body,html").width()-500)+"px";
-$(".yyz-main-right").css("width",wi);
-</script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script> 
-
-<script  type="text/javascript"> 
-
-
-	
-//地图
-var map = new BMap.Map("l-map"); //("l-map", {mapType:BMAP_SATELLITE_MAP}); 默认卫星地图
-
-var point = new BMap.Point(116.331398,39.897445);
-
-var marker = new BMap.Marker(new BMap.Point(116.125741, 40.118330));        // 创建标注     40.1185230000,116.1246590000 
-map.addOverlay(marker);
-
-//添加一个弹框
-map.centerAndZoom(new BMap.Point(116.125741, 40.118330), 15);
-	var opts = {
-	  width : 200,     // 信息窗口宽度
-	  height: 100,     // 信息窗口高度
-	  title : "北京五洲康泰科技有限公司" , // 信息窗口标题
-	  enableMessage:true,//设置允许信息窗发送短息
-	  message:"等待"
-	}
-var infoWindow = new BMap.InfoWindow("地址：北京市海淀区苏家坨镇梁家园35号", opts);  // 创建信息窗口对象 
-marker.addEventListener("click", function(){          
-map.openInfoWindow(infoWindow,new BMap.Point(116.125741, 40.118330)); //开启信息窗口
-});
-
-
-//滚动条缩放
-setTimeout(function(){
-		map.setZoom(14);   
-	}, 2000);  //2秒后放大到14级
-map.enableScrollWheelZoom(true);
-
-
-
-
-
-
-
-//添加卫星地图
-map.addControl(new BMap.MapTypeControl()); 
-</script>
 </html>
