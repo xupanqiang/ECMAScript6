@@ -1,5 +1,5 @@
 /**
- * Created by zhaoky on 2017/1/22.
+ * Created by XUPQ on 2017/1/22.
  */
 // RegExp构造函数
 // 字符串的正则方法

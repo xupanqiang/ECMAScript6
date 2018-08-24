@@ -1,5 +1,5 @@
 /**
- * Created by zhaoky on 2017/1/22.
+ * Created by XUPQ on 2017/1/22.
  */
 // 二进制和八进制表示法
 // Number.isFinite(), Number.isNaN()

@@ -1,5 +1,5 @@
 /**
- * Created by zhaoky on 2017/1/22.
+ * Created by XUPQ on 2017/1/22.
  */
 // Promise的含义
 // 基本用法

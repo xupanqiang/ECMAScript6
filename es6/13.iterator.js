@@ -1,5 +1,5 @@
 /**
- * Created by zhaoky on 2017/1/22.
+ * Created by XUPQ on 2017/1/22.
  */
 // Iterator（遍历器）的概念
 // 数据结构的默认Iterator接口
