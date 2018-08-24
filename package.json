@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhaoky/ECMAScript6.git"
+    "url": "git+https://github.com/xupanqiang/ECMAScript6.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zhaoky/ECMAScript6/issues"
+    "url": "https://github.com/xupanqiang/ECMAScript6/issues"
   },
-  "homepage": "https://github.com/zhaoky/ECMAScript6#readme",
+  "homepage": "https://github.com/xupanqiang/ECMAScript6#readme",
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
